@@ -103,7 +103,8 @@ if __name__ == "__main__":
 ### Step 4 - Expand and refactor
 
 ## Now follow the instructions in this final step. Expand your project. Clean up the code. Make your application functional. Great job getting your first Python application finished!
-## Full Code for Home Library App (added to new file in directory as well):
+## Additional code to complete the app below
+# (final app code added to new file in directory - libraryapp.py):
 def load_books(filename="library.txt"):
     books = []
 
