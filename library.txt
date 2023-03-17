@@ -1,0 +1,4 @@
+Mythology,Edith Hamilton,1954,4.1,335
+The Monk of Mokha,Dave Eggers,2018,4.2,323
+Main Street,Sinclair Lewis,1920,3.8,439
+The Chosen,Chaim Potok,1967,3.9,291
