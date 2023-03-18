@@ -1,0 +1,39 @@
+This code defines a search function called "search_books", which searches for books in a file called "library.txt" by default. 
+The purpose of this function is to help users find books based on a keyword they provide, which can be either a part of the title or the author's name.
+
+def search_books(filename="library.txt"): - 
+This line defines the function and gives it a name: "search_books". The function accepts one parameter called "filename", which is set to "library.txt" by default. This means that if the user doesn't provide a specific file to search in, the function will look in the "library.txt" file.
+
+query = input("Enter a search term (title or author): ").lower() - 
+This line asks the user to enter a search term (either a part of a book title or an author's name). The entered text is then converted to lowercase and stored in a variable called "query".
+
+books = load_books(filename) - 
+This line calls another function named "load_books" and passes the "filename" parameter to it. 
+The "load_books" function reads the file and returns a list of books, which is then stored in a variable called "books".
+
+results = [book for book in books if query in book["title"].lower() or query in book["author"].lower()] - 
+This line searches for books that match the given query. It goes through each book in the "books" list and 
+checks if the query appears in either the book's title or author's name (both converted to lowercase). Matching books are then added to a new list called "results".
+
+if not results: - 
+This line checks if the "results" list is empty, meaning no matching books were found.
+
+print(f"\nNo books found matching '{query}'.\n") - 
+If the "results" list is empty, this line prints a message saying that no books were found matching the given query.
+
+else: - 
+This line indicates that the following block of code will be executed if the "results" list is not empty (i.e., some matching books were found).
+
+print("\nSearch results:") - 
+This line prints a message to indicate the beginning of the search results.
+
+for index, book in enumerate(results, start=1): - 
+This line sets up a loop that goes through each book in the "results" list. 
+The "enumerate" function assigns a unique index number to each book, starting from 1.
+
+print(f"{index}. {book['title']} by {book['author']} ({book['year']}) - Rating: {book['rating']}/5 - Pages: {book['pages']}") - 
+Inside the loop, this line prints the details of each book in the search results. 
+The details include the index number, book title, author, publication year, rating, and the number of pages.
+
+In summary, the "search_books" function allows users to search for books by entering a 
+keyword related to the book's title or author. The function then displays the matching books, along with their details.
