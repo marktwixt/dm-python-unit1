@@ -46,6 +46,7 @@ def add_book(filename="library.txt"):
 
     print(f"\nBook '{title}' has been added to the library.\n")
 
+
 def load_books(filename="library.txt"):
     books = []
 
@@ -77,7 +78,8 @@ def list_books(filename="library.txt"):
     else:
         print("\nList of books in the library:")
         for index, book in enumerate(books, start=1):
-            print(f"{index}. {book['title']} by {book['author']} ({book['year']}) - Rating: {book['rating']}/5 - Pages: {book['pages']}")
+            print(
+                f"{index}. {book['title']} by {book['author']} ({book['year']}) - Rating: {book['rating']}/5 - Pages: {book['pages']}")
 
 
 def total_pages(filename="library.txt"):
@@ -93,20 +95,23 @@ def average_rating(filename="library.txt"):
         print("\nThere are no books in the library to calculate an average rating.\n")
     else:
         avg_rating = sum(book["rating"] for book in books) / len(books)
-        print(f"\nThe average rating of books in the library is {avg_rating:.2f}/5.\n")
+        print(
+            f"\nThe average rating of books in the library is {avg_rating:.2f}/5.\n")
 
 
 def search_books(filename="library.txt"):
     query = input("Enter a search term (title or author): ").lower()
     books = load_books(filename)
-    results = [book for book in books if query in book["title"].lower() or query in book["author"].lower()]
+    results = [book for book in books if query in book["title"].lower()
+               or query in book["author"].lower()]
 
     if not results:
         print(f"\nNo books found matching '{query}'.\n")
     else:
         print("\nSearch results:")
         for index, book in enumerate(results, start=1):
-            print(f"{index}. {book['title']} by {book['author']} ({book['year']}) - Rating: {book['rating']}/5 - Pages: {book['pages']}")
+            print(
+                f"{index}. {book['title']} by {book['author']} ({book['year']}) - Rating: {book['rating']}/5 - Pages: {book['pages']}")
 
 
 def main_menu():
@@ -136,6 +141,7 @@ def main_menu():
             break
         else:
             print("Invalid input. Please choose a number between 1 and 6.")
+
 
 if __name__ == "__main__":
     main_menu()
