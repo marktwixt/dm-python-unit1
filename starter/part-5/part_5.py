@@ -58,7 +58,7 @@ def add_book(books, filename="library.txt"):
 ## Now take your previously create function which prints info about all the books in your library, but gets the info from a list, and make it work by reading the information in your home library's .txt document. This will take some new logic, but you can do it.
 
 # Code here
-def list_books(filename="library.txt"):
+def list_books(filename="library.txt"): # type: ignore
     try:
         with open(filename, "r") as file:
             book_lines = file.readlines()
@@ -78,7 +78,7 @@ def list_books(filename="library.txt"):
 ## Wrap your main menu function call in an "if __name__ == '__main__':" statement to ensure it doesn't accidentally run if this file is imported as a module elsewhere.
 
 # Code this at the bottom of the script
-def main_menu():
+def main_menu(): # type: ignore
     while True:
         print("\nLibrary Main Menu")
         print("1. Add a book")
@@ -88,7 +88,7 @@ def main_menu():
         choice = input("\nPlease choose an option (1-3): ")
 
         if choice == '1':
-            add_book()
+            add_book() # type: ignore
         elif choice == '2':
             list_books()
         elif choice == '3':
@@ -181,7 +181,7 @@ def main_menu():
         choice = input("\nPlease choose an option (1-6): ")
 
         if choice == '1':
-            add_book()
+            add_book() # type: ignore
         elif choice == '2':
             list_books()
         elif choice == '3':
